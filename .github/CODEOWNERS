@@ -1,2 +1,5 @@
 # Default code owners for dsx-github-actions
-* @mmou-nv @huaweic-nv @abegnoche @lachen-nv
+#
+# Ownership resolves via the org team (IdP-synced from the access-dsx-owner DL)
+# rather than individuals, so it survives org moves without per-person upkeep.
+* @dsx-ai-factory/dsx-sw-admins
