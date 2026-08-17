@@ -18,7 +18,7 @@ A reusable workflow that copies OCI images between registries (e.g., from NGC to
 ```yaml
 jobs:
   promote:
-    uses: NVIDIA/dsx-github-actions/.github/workflows/promote-image.yml@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/workflows/promote-image.yml@main
     with:
       source: nvcr.io/myorg/source-image
       source_tag: v1.0.0
@@ -40,7 +40,7 @@ A reusable workflow wrapper for building (and optionally pushing) OCI images via
 ```yaml
 jobs:
   build:
-    uses: NVIDIA/dsx-github-actions/.github/workflows/docker-build.yml@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/workflows/docker-build.yml@main
     with:
       runner: ubuntu-latest
       image: nvcr.io/myorg/myapp
@@ -133,19 +133,19 @@ The workflow creates two types of tags:
 **Pin to specific version** (recommended for production):
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@v1.2.3
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@v1.2.3
 ```
 
 **Pin to major version** (get latest patches/features):
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@v1
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@v1
 ```
 
 **Use latest** (for development/testing):
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
 ```
 
 ### Manual Release

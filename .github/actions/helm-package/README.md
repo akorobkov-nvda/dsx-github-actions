@@ -9,7 +9,7 @@ steps:
   - uses: actions/checkout@v4
 
   - name: Package Chart
-    uses: NVIDIA/dsx-github-actions/.github/actions/helm-package@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/helm-package@main
     with:
       chart-path: ./charts/my-chart
       version: 1.0.0

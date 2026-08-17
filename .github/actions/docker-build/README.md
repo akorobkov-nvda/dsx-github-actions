@@ -11,7 +11,7 @@ steps:
   - uses: actions/checkout@v4
 
   - name: Build image (no push)
-    uses: NVIDIA/dsx-github-actions/.github/actions/docker-build@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/docker-build@main
     with:
       image: ghcr.io/myorg/myapp
       tags: |
@@ -26,7 +26,7 @@ steps:
   - uses: actions/checkout@v4
 
   - name: Build and push
-    uses: NVIDIA/dsx-github-actions/.github/actions/docker-build@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/docker-build@main
     with:
       image: nvcr.io/myorg/myapp
       tags: |
@@ -45,7 +45,7 @@ steps:
   - uses: actions/checkout@v4
 
   - name: Build, scan, and push
-    uses: NVIDIA/dsx-github-actions/.github/actions/docker-build@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/docker-build@main
     with:
       image: nvcr.io/myorg/myapp
       tags: |

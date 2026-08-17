@@ -6,7 +6,7 @@ Licensed under the Apache License, Version 2.0 (see LICENSE).
 Scope of this NOTICE
 --------------------
 This notice applies to the source code distributed in this repository
-(https://github.com/NVIDIA/dsx-github-actions), not to any container
+(https://github.com/dsx-ai-factory/dsx-github-actions), not to any container
 images or other artifacts that may be built or published from it.
 
 Third-party software in the repository source

@@ -14,7 +14,7 @@ A GitHub Composite Action to create and push a git tag to the current commit.
 steps:
   - uses: actions/checkout@v3
   - name: Create Tag
-    uses: NVIDIA/dsx-github-actions/.github/actions/git-tag@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/git-tag@main
     with:
       tag: "v1.0.0"
       github_token: ${{ secrets.GITHUB_TOKEN }}

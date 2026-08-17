@@ -38,7 +38,7 @@ jobs:
           fetch-depth: 0 # Fetch full history for scanning
 
       - name: TruffleHog Secret Scan
-        uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
 ```
 
 ### Pull Request Scan
@@ -61,7 +61,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
         with:
           post-pr-comment: "true" # Post findings to PR
 ```
@@ -83,7 +83,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
         with:
           extra-args: "--results=verified,unknown" # Only show verified/unknown secrets
 ```
@@ -91,7 +91,7 @@ jobs:
 ### Scan Specific Commit Range
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
   with:
     base: "main"
     head: "feature-branch"
@@ -100,7 +100,7 @@ jobs:
 ### Advanced Configuration
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
   with:
     path: "./src"
     version: "3.63.0"
@@ -164,7 +164,7 @@ The action includes a **quality gate** feature that can fail the workflow if sec
 ### Example: Enforce Quality Gate
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
   with:
     extra-args: "--results=verified,unknown"
     fail-on-findings: "true" # Fail workflow if secrets found (default)
@@ -173,7 +173,7 @@ The action includes a **quality gate** feature that can fail the workflow if sec
 ### Example: Warn Only (No Blocking)
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
   with:
     extra-args: "--results=verified,unknown"
     fail-on-findings: "false" # Only warn, don't block workflow
@@ -307,7 +307,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
 ```
 
 ### Example 2: PR with Comments
@@ -330,7 +330,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
         with:
           extra-args: "--results=verified,unknown"
           post-pr-comment: "true"
@@ -339,7 +339,7 @@ jobs:
 ### Example 3: Only Verified Secrets
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
   with:
     extra-args: "--only-verified"
 ```
@@ -347,7 +347,7 @@ jobs:
 ### Example 4: Exclude Vendor/Dependencies
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
   with:
     extra-args: "--results=verified,unknown --exclude-paths=vendor/ --exclude-paths=node_modules/"
 ```
@@ -377,13 +377,13 @@ jobs:
 
       # Secret scanning
       - name: TruffleHog Scan
-        uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
         with:
           post-pr-comment: "true"
 
       # Code analysis
       - name: CodeQL Scan
-        uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "go"
           post-pr-comment: "true"
@@ -560,19 +560,19 @@ TruffleHog is now the sole secret scanning tool in this workflow.
 ### Use Specific Version (Recommended)
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@v1.0.0
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@v1.0.0
 ```
 
 ### Use Major Version
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@v1
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@v1
 ```
 
 ### Use Latest (Development)
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
 ```
 
 ## References

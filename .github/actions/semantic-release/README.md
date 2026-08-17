@@ -35,7 +35,7 @@ jobs:
         with:
           fetch-depth: 0 # Required for semantic-release
 
-      - uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -185,13 +185,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
 ```
 
 ### Example 2: With Changelog Generation
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
   with:
     extra-plugins: |
       @semantic-release/changelog@7.0.0
@@ -222,7 +222,7 @@ jobs:
 ### Example 3: Multi-Branch Strategy
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
   with:
     branches: |
       [
@@ -235,7 +235,7 @@ jobs:
 ### Example 4: Monorepo with Custom Tag Format
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
   with:
     working-directory: ./packages/my-package
     tag-format: my-package-v${version}
@@ -257,7 +257,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
         with:
           dry-run: "true"
           ci: "false"
@@ -273,7 +273,7 @@ steps:
 
   - name: Run Semantic Release
     id: release
-    uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
 
   - name: Deploy New Version
     if: steps.release.outputs.new-release-published == 'true'
@@ -295,7 +295,7 @@ steps:
   with:
     node-version: "20"
 
-- uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
   with:
     extra-plugins: "@semantic-release/npm@12.0.0"
   env:
@@ -382,7 +382,7 @@ permissions:
 **Solution**: Use a Personal Access Token (PAT):
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
   with:
     github-token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
 ```
@@ -455,7 +455,7 @@ Add `[skip ci]` to release commits to avoid infinite loops:
 Test your semantic-release configuration in PRs:
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/semantic-release@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/semantic-release@main
   with:
     dry-run: "true"
 ```

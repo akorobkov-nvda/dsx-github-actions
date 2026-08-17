@@ -40,7 +40,7 @@ jobs:
       pull-requests: write
     timeout-minutes: 10
     steps:
-      - uses: NVIDIA/dsx-github-actions/.github/actions/stale-check@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/stale-check@main
 ```
 
 All inputs have sensible defaults, so zero configuration is needed to get started.
@@ -50,7 +50,7 @@ All inputs have sensible defaults, so zero configuration is needed to get starte
 ### Custom Timelines
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/stale-check@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/stale-check@main
   with:
     days-before-issue-stale: '90'
     days-before-pr-stale: '45'
@@ -60,7 +60,7 @@ All inputs have sensible defaults, so zero configuration is needed to get starte
 ### Custom Exempt Labels
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/stale-check@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/stale-check@main
   with:
     exempt-issue-labels: 'lifecycle/frozen,priority/critical,epic'
     exempt-pr-labels: 'lifecycle/frozen,do-not-merge,wip'
@@ -69,7 +69,7 @@ All inputs have sensible defaults, so zero configuration is needed to get starte
 ### Custom Messages
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/stale-check@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/stale-check@main
   with:
     stale-issue-message: |
       This issue has been inactive for 60 days and will be closed soon.
@@ -166,13 +166,13 @@ Create these labels in your repository for full functionality:
 ### Use Specific Version (Recommended for Production)
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/stale-check@v1.0.0
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/stale-check@v1.0.0
 ```
 
 ### Use Latest (Development/Testing)
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/stale-check@main
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/stale-check@main
 ```
 
 ## License

@@ -9,7 +9,7 @@ steps:
   - uses: actions/checkout@v4
 
   - name: Package and Push
-    uses: NVIDIA/dsx-github-actions/.github/actions/helm-package-push@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/helm-package-push@main
     with:
       chart-path: ./charts/my-chart
       ngc-key: ${{ secrets.NGC_API_KEY }}

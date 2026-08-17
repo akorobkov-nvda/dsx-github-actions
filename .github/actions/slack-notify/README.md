@@ -60,7 +60,7 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
         with:
           slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel-id: C1234567890
@@ -136,7 +136,7 @@ jobs:
 
       - name: Notify Success
         if: success()
-        uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
         with:
           slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel-id: C1234567890
@@ -156,7 +156,7 @@ jobs:
 ```yaml
 - name: Notify Failure
   if: failure()
-  uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
   with:
     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel-id: C1234567890
@@ -185,7 +185,7 @@ jobs:
     steps:
       - name: PR Opened
         if: github.event.action == 'opened'
-        uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
         with:
           slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel-id: C1234567890
@@ -200,7 +200,7 @@ jobs:
 
       - name: PR Merged
         if: github.event.pull_request.merged == true
-        uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
         with:
           slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel-id: C1234567890
@@ -216,7 +216,7 @@ jobs:
 
 ```yaml
 - name: Send Rich Message
-  uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
   with:
     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel-id: C1234567890
@@ -273,7 +273,7 @@ jobs:
 ```yaml
 - name: Send Build Status
   if: always()
-  uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
   with:
     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel-id: C1234567890
@@ -292,7 +292,7 @@ jobs:
 ```yaml
 - name: Initial Message
   id: initial-message
-  uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
   with:
     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel-id: C1234567890
@@ -302,7 +302,7 @@ jobs:
   run: ./deploy.sh
 
 - name: Thread Reply
-  uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
   with:
     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel-id: C1234567890
@@ -317,14 +317,14 @@ jobs:
 
 ```yaml
 - name: Notify Multiple Channels
-  uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
   with:
     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel-id: C1234567890
     message: "📢 Important update!"
 
 - name: Notify Dev Channel
-  uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
   with:
     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel-id: C0987654321
@@ -351,7 +351,7 @@ jobs:
           echo "report_data=Sample report data" >> $GITHUB_OUTPUT
 
       - name: Send Daily Report
-        uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
         with:
           slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
           channel-id: C1234567890
@@ -366,7 +366,7 @@ jobs:
 ```yaml
 # Update a message
 - name: Update Message
-  uses: NVIDIA/dsx-github-actions/.github/actions/slack-notify@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/slack-notify@main
   with:
     slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel-id: C1234567890

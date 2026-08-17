@@ -100,11 +100,11 @@ All pull requests are automatically checked for DCO complianc via DCO bot. Pull 
 
 ## Fork and Setup
 
-Developers must first fork the upstream [dsx-github-actions repository](https://github.com/NVIDIA/dsx-github-actions).
+Developers must first fork the upstream [dsx-github-actions repository](https://github.com/dsx-ai-factory/dsx-github-actions).
 
 ### 1. Fork the Repository
 
-1. Navigate to the [dsx-github-actions repository](https://github.com/NVIDIA/dsx-github-actions) on GitHub.
+1. Navigate to the [dsx-github-actions repository](https://github.com/dsx-ai-factory/dsx-github-actions) on GitHub.
 2. Click the **Fork** button in the upper right corner.
 3. Select your GitHub account as the destination.
 
@@ -120,7 +120,7 @@ cd dsx-github-actions
 Add the original repository as an upstream remote to keep your fork in sync:
 
 ```bash
-git remote add upstream https://github.com/NVIDIA/dsx-github-actions.git
+git remote add upstream https://github.com/dsx-ai-factory/dsx-github-actions.git
 git remote -v  # Verify remotes
 ```
 

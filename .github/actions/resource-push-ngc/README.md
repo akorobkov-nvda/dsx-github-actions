@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Upload resource
-        uses: NVIDIA/dsx-github-actions/.github/actions/resource-push-ngc@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/resource-push-ngc@main
         with:
           name: my-model
           display-name: My Model
