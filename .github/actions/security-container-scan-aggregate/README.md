@@ -40,7 +40,7 @@ jobs:
       contents: read
       pull-requests: write  # required for post-pr-comment: true
     steps:
-      - uses: NVIDIA/dsx-github-actions/.github/actions/security-container-scan-aggregate@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/security-container-scan-aggregate@main
         with:
           post-pr-comment: 'true'
 ```
@@ -48,7 +48,7 @@ jobs:
 ### Customising the artifact pattern
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/security-container-scan-aggregate@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/security-container-scan-aggregate@main
   with:
     artifact-pattern: 'scan-report-*'   # if your callers name artifacts differently
     post-pr-comment: 'true'

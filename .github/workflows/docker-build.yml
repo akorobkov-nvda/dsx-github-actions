@@ -135,7 +135,7 @@ jobs:
         run: |
           set -euo pipefail
           # github.workflow_ref example:
-          #   NVIDIA/dsx-github-actions/.github/workflows/docker-build.yml@v1.2.3
+          #   dsx-ai-factory/dsx-github-actions/.github/workflows/docker-build.yml@v1.2.3
           wf_ref="${GITHUB_WORKFLOW_REF:-}"
           ref="${wf_ref##*@}"
           if [[ -z "${ref}" || "${ref}" == "${wf_ref}" ]]; then
@@ -146,7 +146,7 @@ jobs:
       - name: Checkout dsx-github-actions (for local action)
         uses: actions/checkout@v4
         with:
-          repository: NVIDIA/dsx-github-actions
+          repository: dsx-ai-factory/dsx-github-actions
           ref: ${{ steps.resolve.outputs.ref }}
           path: dsx-github-actions
 

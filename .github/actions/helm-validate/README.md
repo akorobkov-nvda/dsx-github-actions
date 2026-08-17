@@ -9,7 +9,7 @@ steps:
   - uses: actions/checkout@v4
 
   - name: Validate Chart
-    uses: NVIDIA/dsx-github-actions/.github/actions/helm-validate@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/helm-validate@main
     with:
       chart-path: ./charts/my-chart
       helm-version: v3.18.3

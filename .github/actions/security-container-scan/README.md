@@ -54,7 +54,7 @@ jobs:
           tags: localbuild/myapp:${{ github.run_id }}
 
       - name: Grype scan
-        uses: NVIDIA/dsx-github-actions/.github/actions/security-container-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/security-container-scan@main
         with:
           image: localbuild/myapp:${{ github.run_id }}
           fail-on: high
@@ -88,7 +88,7 @@ jobs:
           tags: localbuild/myapp:${{ github.run_id }}
 
       - name: Grype scan + SARIF upload
-        uses: NVIDIA/dsx-github-actions/.github/actions/security-container-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/security-container-scan@main
         with:
           image: localbuild/myapp:${{ github.run_id }}
           fail-on: critical
@@ -107,7 +107,7 @@ strategy:
   matrix:
     service: [api, worker, gateway]
 steps:
-  - uses: NVIDIA/dsx-github-actions/.github/actions/security-container-scan@main
+  - uses: dsx-ai-factory/dsx-github-actions/.github/actions/security-container-scan@main
     with:
       image: localbuild/${{ matrix.service }}:${{ github.run_id }}
       upload-sarif: "true"

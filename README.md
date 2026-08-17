@@ -62,7 +62,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: CodeQL Analysis
-        uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "rust"
           build-command: "cargo build --workspace"
@@ -72,7 +72,7 @@ jobs:
 
 ```yaml
 - name: CodeQL Analysis
-  uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+  uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "go"
     build-command: "go build ./..."
@@ -91,7 +91,7 @@ on:
 
 jobs:
   promote:
-    uses: NVIDIA/dsx-github-actions/.github/workflows/promote-image.yml@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/workflows/promote-image.yml@main
     with:
       source: nvcr.io/acme/dev/service
       source_tag: faf3d1
@@ -145,7 +145,7 @@ This repository uses **automatic semantic versioning**. Tags are automatically c
 Maximum stability and security - the target action never changes:
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@55d1e0af17fb4431edaca19fbd5c78fecd29d18a
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@55d1e0af17fb4431edaca19fbd5c78fecd29d18a
 ```
 
 ✅ **Best for**: Production, CI/CD pipelines
@@ -156,7 +156,7 @@ uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@55d1e0af17fb4431edac
 Maximum stability - version never changes:
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@v1.2.3
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@v1.2.3
 ```
 
 ✅ **Best for**: Production, CI/CD pipelines
@@ -167,7 +167,7 @@ uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@v1.2.3
 Get patches and features, avoid breaking changes:
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@v1
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@v1
 ```
 
 ✅ **Best for**: Most use cases
@@ -179,7 +179,7 @@ uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@v1
 Always use latest code:
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
 ```
 
 ⚠️ **Best for**: Development and testing only
@@ -199,7 +199,7 @@ View all releases: [GitHub Releases](../../releases)
 
 ```bash
 # List all tags
-git ls-remote --tags https://github.com/NVIDIA/dsx-github-actions.git
+git ls-remote --tags https://github.com/dsx-ai-factory/dsx-github-actions.git
 ```
 
 ### Automatic Versioning
@@ -235,12 +235,12 @@ jobs:
           fetch-depth: 0 # Required for TruffleHog
 
       # Secret scanning
-      - uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@55d1e0af17fb4431edaca19fbd5c78fecd29d18a
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@55d1e0af17fb4431edaca19fbd5c78fecd29d18a
         with:
           post-pr-comment: "true"
 
       # Code analysis
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@55d1e0af17fb4431edaca19fbd5c78fecd29d18a
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@55d1e0af17fb4431edaca19fbd5c78fecd29d18a
         with:
           languages: "go"
           post-pr-comment: "true"
@@ -259,7 +259,7 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "rust"
           build-command: "cargo build --workspace"
@@ -282,7 +282,7 @@ jobs:
 
       # Scan for secrets in source code
       - name: Secret Scan
-        uses: NVIDIA/dsx-github-actions/.github/actions/trufflehog-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/trufflehog-scan@main
         with:
           post-pr-comment: "true"
 

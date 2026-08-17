@@ -8,7 +8,7 @@ A GitHub Composite Action that runs a Go linting suite: `golangci-lint`, `go fmt
 steps:
   - uses: actions/checkout@v4
   - name: Go Lint
-    uses: NVIDIA/dsx-github-actions/.github/actions/go-lint@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/go-lint@main
     with:
       working-directory: '.'
 ```
@@ -19,7 +19,7 @@ steps:
 steps:
   - uses: actions/checkout@v4
   - name: Go Lint
-    uses: NVIDIA/dsx-github-actions/.github/actions/go-lint@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/go-lint@main
     with:
       go-flags: '-mod=vendor'
       config-path: '.golangci.yml'

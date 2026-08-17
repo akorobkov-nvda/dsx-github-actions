@@ -8,7 +8,7 @@ A GitHub Composite Action that runs Go tests with race detection, coverage repor
 steps:
   - uses: actions/checkout@v4
   - name: Go Test
-    uses: NVIDIA/dsx-github-actions/.github/actions/go-test@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/go-test@main
 ```
 
 ### With custom packages and flags
@@ -17,7 +17,7 @@ steps:
 steps:
   - uses: actions/checkout@v4
   - name: Go Test
-    uses: NVIDIA/dsx-github-actions/.github/actions/go-test@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/go-test@main
     with:
       packages: './pkg/...'
       test-flags: '-v -count=1 -timeout=10m'

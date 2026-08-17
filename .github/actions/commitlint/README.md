@@ -10,7 +10,7 @@ steps:
     with:
       fetch-depth: 0  # Required to access commit history
   - name: Lint Commits
-    uses: NVIDIA/dsx-github-actions/.github/actions/commitlint@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/commitlint@main
 ```
 
 ### With custom config
@@ -21,7 +21,7 @@ steps:
     with:
       fetch-depth: 0
   - name: Lint Commits
-    uses: NVIDIA/dsx-github-actions/.github/actions/commitlint@main
+    uses: dsx-ai-factory/dsx-github-actions/.github/actions/commitlint@main
     with:
       config-file: '.commitlintrc.js'
 ```

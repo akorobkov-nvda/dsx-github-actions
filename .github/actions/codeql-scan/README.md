@@ -38,7 +38,7 @@ For more information, see [GitHub's GHAS documentation](https://docs.github.com/
 If you cannot enable GHAS, set `upload-sarif: 'false'` to skip the upload step:
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "go"
     upload-sarif: "false" # Disable upload when GHAS is not available
@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run CodeQL Scan
-        uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "go"
           build-mode: "manual"
@@ -91,7 +91,7 @@ jobs:
         uses: actions-rust-lang/setup-rust-toolchain@v1
 
       - name: Run CodeQL Scan
-        uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "rust"
           build-mode: "none"
@@ -122,7 +122,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run CodeQL Scan
-        uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+        uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "python"
           build-mode: "none"
@@ -206,7 +206,7 @@ CodeQL maps findings to three severity levels:
 ### Example: Block on Critical/High Only (Recommended)
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "go"
     fail-on-findings: "true"
@@ -232,7 +232,7 @@ Please review and fix the issues before merging.
 ### Example: Block on Medium+ Severity
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "go"
     fail-on-findings: "true"
@@ -258,7 +258,7 @@ Please review and fix the issues before merging.
 ### Example: Block on All Issues
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "go"
     fail-on-findings: "true"
@@ -268,7 +268,7 @@ Please review and fix the issues before merging.
 ### Example: Warn Only (No Blocking)
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "go"
     fail-on-findings: "false" # Disabled, only warn
@@ -318,7 +318,7 @@ jobs:
       security-events: write
     steps:
       - uses: actions/checkout@v4
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "go"
           build-mode: "manual"
@@ -333,7 +333,7 @@ jobs:
       security-events: write
     steps:
       - uses: actions/checkout@v4
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "javascript"
           build-mode: "none"
@@ -345,7 +345,7 @@ jobs:
 If you need to use a custom token (e.g., for private dependencies):
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "go"
     build-command: "go build ./..."
@@ -357,7 +357,7 @@ If you need to use a custom token (e.g., for private dependencies):
 The `skip-build` parameter is useful when using `build-mode: none` and you want to explicitly skip any build steps:
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "rust"
     build-mode: "none"
@@ -399,7 +399,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # No build step needed at all
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "rust"
           build-mode: "none" # Analyzes source code directly
@@ -413,7 +413,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "go"
           build-mode: "manual"
@@ -426,7 +426,7 @@ jobs:
 Enable automated PR comments by parsing the SARIF results file. **This works even without GHAS!**
 
 ```yaml
-- uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+- uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
   with:
     languages: "rust"
     post-pr-comment: "true" # Post results to PR
@@ -500,7 +500,7 @@ jobs:
       pull-requests: write # Required for PR comments
     steps:
       - uses: actions/checkout@v4
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "rust"
           build-mode: "none"
@@ -520,7 +520,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "go"
           build-mode: "manual"
@@ -561,7 +561,7 @@ jobs:
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
 
       # CodeQL will trace this build
-      - uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+      - uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
         with:
           languages: "go"
           build-mode: "manual"
@@ -610,13 +610,13 @@ jobs:
 ### Use Specific Version (Recommended for Production)
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@v1.0.0
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@v1.0.0
 ```
 
 ### Use Latest (Development/Testing)
 
 ```yaml
-uses: NVIDIA/dsx-github-actions/.github/actions/codeql-scan@main
+uses: dsx-ai-factory/dsx-github-actions/.github/actions/codeql-scan@main
 ```
 
 ## License
